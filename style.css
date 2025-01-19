@@ -1,0 +1,142 @@
+:root {
+    --color-accent: oklch(65% 50% 0); 
+    accent-color: var(--color-accent); 
+}
+
+body {
+    max-width: 100ch; 
+    margin: 0 auto; 
+    padding: 1em;  
+    margin-inline: max(1em, (100% - 100ch) / 2);
+    font: 100%/1.5 system-ui;
+}
+
+form {
+    display: grid;                 /* Enable grid layout for the form */
+    grid-template-columns: auto 1fr; /* Two columns: labels auto-sized, inputs flexible */
+    gap: 1em;                      /* Add spacing between rows and columns */
+    align-items: center;           /* Vertically center the form controls */
+    max-width: 600px;              /* Optional: limit the form width */
+    margin: 0 auto;                /* Center the form on the page */
+}
+
+form label {
+    grid-column: 1 / 2;            /* Place labels in the first column */
+    text-align: right;             /* Align labels to the right */
+    font-weight: bold;             /* Optional: make labels bold */
+}
+
+form input, form textarea, form button {
+    grid-column: 2 / 3;            /* Place form controls in the second column */
+    width: 100%;                   /* Make inputs take full column width */
+    box-sizing: border-box;        /* Include padding and border in width */
+    padding: 0.5em;                /* Add padding inside inputs */
+    border: 1px solid #ccc;        /* Subtle border */
+    border-radius: 4px;            /* Optional: rounded corners */
+    font: inherit;                 /* Use the page's font */
+}
+
+form button {
+    grid-column: 1 / -1;           /* Make the button span both columns */
+    justify-self: center;          /* Center the button horizontally */
+    background-color: var(--color-accent); /* Use accent color */
+    color: white;                  /* Button text color */
+    padding: 0.75em 1.5em;         /* Add padding for better clickability */
+    border: none;                  /* Remove button border */
+    border-radius: 4px;            /* Rounded corners */
+    cursor: pointer;               /* Pointer cursor on hover */
+}
+
+form button:hover {
+    background-color: oklch(55% 50% 0); /* Darker accent color on hover */
+}
+
+nav {
+    display: flex;              /* Enables Flexbox for layout */
+    justify-content: space-between; /* Space out the links evenly */
+    align-items: center;        /* Vertically center the links */
+    margin-bottom: 1em;         /* Add space below the nav bar */
+    border-bottom: 1px solid oklch(80% 3% 200); /* Subtle bottom border */
+}
+
+nav li {
+    display: contents;          /* Ignore the <li> for styling */
+}
+
+nav ul {
+    display: contents;          /* Ignore the <li> for styling */
+}
+
+nav a {
+    text-decoration: none;      /* Remove underline from links */
+    color: inherit;             /* Make links inherit parent's text color */
+    padding: 0.5em;             /* Add padding around each link */
+    text-align: center;         /* Center text inside the links */
+}
+
+nav a.current {
+    border-bottom: 0.4em solid oklch(85% 3% 200); /* Thick bottom border */
+    padding-bottom: 0.1em;      /* Reduce padding to counter added height */
+    font-weight: bold;          /* Make it visually distinct */
+}
+
+nav a:hover {
+    border-bottom: 0.4em solid var(--color-accent); /* Accent color on hover */
+}
+
+.projects {
+    display: grid;  
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Flexible grid layout */
+    gap: 1em; /* Add spacing between articles */
+    padding: 1em; /* Add padding inside the grid container */
+}
+
+.projects article {
+    display: grid; /* Make each article a grid container */
+    grid-template-rows: subgrid; /* Align article contents across rows */
+    grid-row: span 3; /* Ensure each article spans 3 rows */
+    gap: 1em; /* Add spacing between elements inside the article */
+    background: #f0f0f0; /* Light gray background */
+    padding: 1em; /* Padding inside each article */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.projects h2 {
+    margin: 0; /* Remove default margin for a tighter layout */
+    font-size: 1.2em; /* Adjust font size if needed */
+    line-height: 1.4; /* Tweak line height for readability */
+}
+
+.projects img {
+    max-width: 100%; /* Ensure images do not overflow */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent inline space below images */
+}
+
+/* General heading styles */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;         /* Tighten line spacing for headings */
+    text-wrap: balance;      /* Prevent uneven line breaks */
+    margin: 0.5em 0;         /* Add consistent spacing around headings */
+}
+
+/* Specific styles for <h1> */
+h1 {
+    font-size: 400%;         /* Make <h1> significantly larger for contrast */
+    font-weight: bold;       /* Enhance its visual prominence */
+}
+
+/* Specific styles for <h2> */
+h2 {
+    font-size: 200%;         /* Make <h2> smaller than <h1>, but still prominent */
+    font-weight: bold;
+}
+
+/* You can also define additional styles for <h3>–<h6> as needed */
+h3 {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+
