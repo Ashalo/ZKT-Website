@@ -139,4 +139,39 @@ h3 {
     font-weight: bold;
 }
 
+/* Base setup for light and dark modes */
+:root {
+    color-scheme: light dark; /* Enables automatic adaptation */
+  }
+  
+  /* Default styles (light mode) */
+  body {
+    background-color: canvas; /* Adapts based on OS theme */
+    color: canvastext; /* Text adapts to theme */
+  }
+  
+  /* Navigation border color */
+  nav {
+    --border-color: oklch(50% 10% 200 / 40%);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  /* Hover effect on links (dark-mode compatible) */
+  nav a:hover {
+    background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+  }
+  
 
+/* Positioning the switcher */
+.color-scheme {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 80%;
+    font-family: inherit;
+  }
+  
+  .color-scheme select {
+    font-family: inherit;
+  }
+  
