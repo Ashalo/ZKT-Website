@@ -174,4 +174,26 @@ h3 {
   .color-scheme select {
     font-family: inherit;
   }
+
+  profile-stats {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+  }
+  
+  dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 10px;
+  }
+  
+  dt {
+    font-weight: bold;
+  }
+  
+  dd {
+    margin: 0;
+  }
+  
   
