@@ -11,7 +11,7 @@ const pages = [
     { url: 'contact/', title: 'Contact' },
     { url: 'resume/', title: 'Resume' },
     { url: 'meta/', title: 'Meta'},
-    { url: 'https://github.com/ZachUCSD', title: 'GitHub' },
+    { url: 'https://github.com/Ashalo', title: 'GitHub' },
 ];
   
 // Check if we are on the home page
@@ -95,6 +95,7 @@ export async function fetchJSON(url) {
 
     // Parse the response data
     const data = await response.json();
+
     return data; // Return the parsed data
   } catch (error) {
     console.error('Error fetching or parsing JSON data:', error);
@@ -104,13 +105,15 @@ export async function fetchJSON(url) {
 export async function renderProjects(project, container) {
   const projectElement = document.createElement('div');
   projectElement.classList.add('project');
+  const year = new Date(project.created_at).getFullYear();
+  project.image = `/images/${project.name}.png`;
 
   projectElement.innerHTML = `
-      <h3>${project.title}</h3>
-      <h3>${project.year}</h3>
+      <h3>${project.name}</h3>
+      <h3>${year}</h3>
       <img src="${project.image}" alt="${project.title}" />
       <p>${project.description}</p>
-  `;
+      `;
 
   container.appendChild(projectElement);
 }
@@ -118,5 +121,5 @@ export async function renderProjects(project, container) {
 
 export async function fetchGitHubData(username) {
   // return statement here
-  return fetchJSON(`https://api.github.com/users/${username}`);
+  return fetchJSON(`https://api.github.com/users/${username}/repos`);
 }
