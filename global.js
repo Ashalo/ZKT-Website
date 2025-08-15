@@ -8,8 +8,8 @@ console.log('IT’S ALIVE!');
 repoName = 'ZKT-Website'; // Replace with your actual repository name
 const pages = [
     { url: '', title: 'Home' },
-    { url: '#projects', title: 'projects' },
-    { url: '#contact', title: 'contact' },
+    { url: '#projects', title: 'Projects' },
+    { url: '#contact', title: 'Contact' },
     { url: './resume/', title: 'Resume' },
     { url: 'https://github.com/Ashalo', title: 'GitHub' },
 ];
