@@ -14,35 +14,34 @@ const pages = [
 ];
   
 // Check if we are on the home page
-const ARE_WE_HOME = document.documentElement.classList.contains('home');
+// const ARE_WE_HOME = document.documentElement.classList.contains('home');
   
 // Create a <nav> element and prepend it to the <body>
 const nav = document.createElement('nav');
 document.querySelector('.navwrapper')?.prepend(nav);
   
-// Loop through the `pages` array and dynamically generate links
 for (const p of pages) {
-  // Adjust relative URLs if not on the home page
-  let url = !ARE_WE_HOME && !p.url.startsWith('http') ? '../' + p.url : p.url;
+    const a = document.createElement('a');
+    let url = p.url;
 
-  // Create the <a> element and set its attributes
-  const a = document.createElement('a');
-  a.href = url;
-  a.textContent = p.title;
+    // If hash link and not on home page, prepend home page path
+    if ((p.url === '#projects' || p.url === '#contact') && !document.documentElement.classList.contains('home')) {
+        url = '../' + p.url; // Adjust as needed based on folder depth
+    }
 
-  // Highlight the current page
-  a.classList.toggle(
-    'current',
-    a.host === location.host && a.pathname === location.pathname
-  );
+    a.href = url;
+    a.textContent = p.title;
 
-  // Open external links in a new tab
-  a.toggleAttribute('target', a.host !== location.host);
+    // Highlight current page
+    if (p.url && !p.url.startsWith('#') && location.pathname.endsWith(p.url)) {
+        a.classList.add('current');
+    }
 
-  // Append the link to the <nav>
-  nav.append(a);
+    // External links open in new tab
+    if (p.url.startsWith('http')) a.target = '_blank';
+
+    nav.append(a);
 }
-
 
 
 // Reference the <select> element
