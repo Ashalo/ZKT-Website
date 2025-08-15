@@ -5,6 +5,7 @@ console.log('IT’S ALIVE!');
 // }
 
 // Step 3.1: Automatically generate the navigation menu
+repoName = 'ZKT-Website'; // Replace with your actual repository name
 const pages = [
     { url: '', title: 'Home' },
     { url: '#projects', title: 'projects' },
@@ -21,28 +22,30 @@ const nav = document.createElement('nav');
 document.querySelector('.navwrapper')?.prepend(nav);
   
 for (const p of pages) {
-    const a = document.createElement('a');
-    let url = p.url;
+  let url = p.url;
 
-    // If hash link and not on home page, prepend home page path
-    if ((p.url === '#projects' || p.url === '#contact') && !document.documentElement.classList.contains('home')) {
-        url = '../' + p.url; // Adjust as needed based on folder depth
-    }
+  // Only prepend repoName for local relative URLs (not anchors or external links)
+  if (!url.startsWith('http') && !url.startsWith('#')) {
+    url = `/${repoName}/${url}`;
+  }
 
-    a.href = url;
-    a.textContent = p.title;
+  // Create the <a> element and set its attributes
+  const a = document.createElement('a');
+  a.href = url;
+  a.textContent = p.title;
 
-    // Highlight current page
-    if (p.url && !p.url.startsWith('#') && location.pathname.endsWith(p.url)) {
-        a.classList.add('current');
-    }
+  // Highlight the current page
+  a.classList.toggle(
+    'current',
+    a.host === location.host && a.pathname === location.pathname
+  );
 
-    // External links open in new tab
-    if (p.url.startsWith('http')) a.target = '_blank';
+  // Open external links in a new tab
+  a.toggleAttribute('target', a.host !== location.host);
 
-    nav.append(a);
+  // Append the link to the <nav>
+  nav.append(a);
 }
-
 
 // Reference the <select> element
 const select = document.querySelector('.color-scheme select');
