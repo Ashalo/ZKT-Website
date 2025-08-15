@@ -7,9 +7,9 @@ console.log('IT’S ALIVE!');
 // Step 3.1: Automatically generate the navigation menu
 const pages = [
     { url: '', title: 'Home' },
-    { url: '#projects', title: 'Projects' },
-    { url: '#contact', title: 'Contact' },
-    { url: 'resume/', title: 'Resume' },
+    { url: '#projects', title: 'projects' },
+    { url: '#contact', title: 'contact' },
+    { url: './resume/', title: 'Resume' },
     { url: 'https://github.com/Ashalo', title: 'GitHub' },
 ];
   
