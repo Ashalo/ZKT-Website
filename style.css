@@ -1,23 +1,18 @@
 :root {
-    --color-accent: oklch(65% 50% 0);
-    accent-color: var(--color-accent);
-}
-
-body {
-    max-width: 100ch;
-    margin: 0 auto;
-    padding: 1em;
-    margin-inline: max(1em, (100% - 100ch) / 2);
-    font: 100%/1.5 system-ui;
+    --color-accent: #CC9933;
+    --border-color: black;
+    /* accent-color: #F5C800; */
+    --text-color: #FFFDD2;
 }
 
 form {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 1em;
-    align-items: center;
+    align-items: flex-end;
     max-width: 600px;
     margin: 0 auto;
+    padding: 1em;
 }
 
 form label {
@@ -33,16 +28,15 @@ form button {
     width: 100%;
     box-sizing: border-box;
     padding: 0.5em;
-    border: 1px solid #ccc;
+    border: 1px solid #140A00;
     border-radius: 4px;
     font: inherit;
 }
 
 form button {
     grid-column: 1 / -1;
-    justify-self: center;
-    background-color: var(--color-accent);
-    color: white;
+    justify-self: flex-end;
+    /* color: #F9F3DC; */
     padding: 0.75em 1.5em;
     border: none;
     border-radius: 4px;
@@ -50,58 +44,169 @@ form button {
 }
 
 form button:hover {
-    background-color: oklch(55% 50% 0);
+    background-color: #7C7C7C;
 }
+
+.description-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem
+}
+
+.description-image{
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.description{
+    flex: 1;
+}
+
+.nav-title {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  font-size: 1.2em;
+  color: #CC9933;
+  font-weight: bold;
+  z-index: 1100;
+  width: auto;
+}
+
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1em;
-    border-bottom: 1px solid oklch(80% 3% 200);
+  top: 0em;
+  right: 0em;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end; /* Aligns links to the right */
+  align-items: center;
+  width: auto;
+  /* background: linear-gradient(to bottom, #232b2b 0%, #140A00 100%); */
+  padding: 1em 2em;
 }
 
-nav li {
-    display: contents;
+.navwrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;     
+    width: auto;
+    gap: 1em;
 }
 
 nav ul {
     display: contents;
 }
 
+
+/* This is the space around the navigation links */
 nav a {
-    text-decoration: none;
-    color: inherit;
-    padding: 0.5em;
-    text-align: center;
+  text-decoration: none;
+  color: #CC9933; /* Changed to match body text color */
+  font-weight: 500;
+  font-size: 1em;           /* Make links larger */
+  padding: 0.5em 1em;       /*  Increase padding for larger clickable area */
+  box-sizing: border-box;
+  justify-content: flex-end;
 }
 
 nav a.current {
-    border-bottom: 0.4em solid oklch(85% 3% 200);
-    padding-bottom: 0.1em;
-    font-weight: bold;
+  border-bottom: 0.25em solid var(--color-accent);
 }
 
 nav a:hover {
-    border-bottom: 0.4em solid var(--color-accent);
+  background-color: #7C7C7C;
+  border-radius: 0.5px;
+  border: 0.5px solid #7C7C7C;
+  border-bottom: 0.25em solid var(--color-accent);
+  padding: 0.3em 1em; /* Keep horizontal padding, shrink vertical only */
 }
 
+.banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 1em;
+    /* margin-bottom: 1em; */
+    border-radius: 8px; /* Optional: add some rounding to the corners */
+}
+
+.typer {
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    padding: 0em 0em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typer h1{
+    font-size: 80px;
+    font-weight: 700px;
+}
+
+span{
+    color: var(--text-color)
+}
+
+body {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-inline: 2em 2em;
+    /* margin-inline: max(1em, (100% - 100ch) / 2); */
+    font: 100%/1.5 system-ui;
+    /* background: linear-gradient(to bottom, #232b2b 0%, #140A00 100%); */
+    /* background: linear-gradient(to bottom, #7C7C7C 0%, #140A00 100%); */
+    background: linear-gradient(to bottom, #140A00 0%,  #7C7C7C 100%); 
+    color: var(--text-color);
+    padding-top: 3em; /* Increased to prevent nav overlap */
+    overflow-x: hidden;
+}
+
+/* Project grid */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
     gap: 1em;
-    padding: 1em;
-    border: 2px solid red;  /* Temporary border for visibility */
-    overflow: visible;  /* Make sure the elements don't get hidden */
+    padding: 1em 1em 1em 1em; /* Add more right and left padding */
+    width: 100vw;
+    max-width: 100%;
+    border: 2px solid #7C7C7C;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: visible;
 }
 
+
 .projects article {
-    display: grid;
-    gap: 1em;
-    background: #f0f0f0;
-    padding: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    width: 100%;      /* Fill the grid cell horizontally */
+    height: 100%;     /* Fill the grid cell vertically */
+    background: #7C7C7C;
+    color: var(--text-color);
+    padding: 1em 2em;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    box-sizing: border-box;
+}
+
+.projects article:hover {
+    background: #FFFDD2;
+    color: #140A00;
+    box-shadow: 0 4px 16px rgba(204, 153, 51, 0.2);
+    transform: translateY(-2px) scale(1.03);
 }
 
 .projects h2 {
@@ -116,7 +221,7 @@ nav a:hover {
     display: block;
 }
 
-/* General heading styles */
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     text-wrap: balance;
@@ -138,25 +243,7 @@ h3 {
     font-weight: bold;
 }
 
-/* Base setup for light and dark modes */
-:root {
-    color-scheme: light dark;
-}
-
-body {
-    background-color: canvas;
-    color: canvastext;
-}
-
-nav {
-    --border-color: oklch(50% 10% 200 / 40%);
-    border-bottom: 1px solid var(--border-color);
-}
-
-nav a:hover {
-    background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
-}
-
+/* Color scheme selector */
 .color-scheme {
     position: absolute;
     top: 1rem;
@@ -169,13 +256,15 @@ nav a:hover {
     font-family: inherit;
 }
 
-profile-stats {
+/* Profile stats box */
+.profile-stats {
     margin-top: 20px;
     padding: 15px;
     background-color: #f4f4f4;
     border-radius: 5px;
 }
 
+/* Definition list layout */
 dl {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -190,68 +279,60 @@ dd {
     margin: 0;
 }
 
+/* Pie plot styling */
 #projects-pie-plot {
     max-width: 20em;
     margin-block: 2em;
     overflow: visible;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.legend {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
-    gap: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background: #f9f9f9;
-    border-radius: 8px;
-    flex: 1;
-    min-width: 200px;
-}
-
-.legend li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.legend .swatch {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--color);
-    display: inline-block;
-}
-
-/* Smooth transition */
+/* Smooth transitions */
 path {
     transition: 300ms;
     cursor: pointer;
 }
 
-/* Highlight hovered wedge */
-#projects-pie-plot.has-hover path:not(:hover) {
-    opacity: 0.5;
+.project-link {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Highlight selected wedge */
-.selected {
-    --color: oklch(60% 45% 0) !important;
+form.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
 }
 
-.selected:is(path) {
-    fill: var(--color);
-}
-
-/* Highlight selected legend */
-.legend .selected {
+.contact-form label {
     font-weight: bold;
-    color: var(--color);
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background-color: #CC9933;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    background-color: #b3832c;
+}
+
+for.contact-form label{
+    text-align: left;
+    font-weight: bold;
 }

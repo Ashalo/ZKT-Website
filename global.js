@@ -1,16 +1,15 @@
 console.log('IT’S ALIVE!');
 
-function $$(selector, context = document) {
-  return Array.from(context.querySelectorAll(selector));
-}
+// function $$(selector, context = document) {
+//   return Array.from(context.querySelectorAll(selector));
+// }
 
 // Step 3.1: Automatically generate the navigation menu
 const pages = [
     { url: '', title: 'Home' },
-    { url: 'projects/', title: 'Projects' },
-    { url: 'contact/', title: 'Contact' },
+    { url: '#projects', title: 'Projects' },
+    { url: '#contact', title: 'Contact' },
     { url: 'resume/', title: 'Resume' },
-    { url: 'meta/', title: 'Meta'},
     { url: 'https://github.com/Ashalo', title: 'GitHub' },
 ];
   
@@ -19,7 +18,7 @@ const ARE_WE_HOME = document.documentElement.classList.contains('home');
   
 // Create a <nav> element and prepend it to the <body>
 const nav = document.createElement('nav');
-document.body.prepend(nav);
+document.querySelector('.navwrapper')?.prepend(nav);
   
 // Loop through the `pages` array and dynamically generate links
 for (const p of pages) {
@@ -44,19 +43,7 @@ for (const p of pages) {
   nav.append(a);
 }
 
-document.body.insertAdjacentHTML(
-  'afterbegin',
-  `
-  <label class="color-scheme">
-    Theme:
-    <select>
-      <option value="light dark">Automatic</option>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
-    </select>
-  </label>
-`
-);
+
 
 // Reference the <select> element
 const select = document.querySelector('.color-scheme select');
@@ -67,21 +54,21 @@ function setColorScheme(scheme) {
 }
 
 // Event listener for dropdown changes
-select.addEventListener('input', (event) => {
-  const colorScheme = event.target.value;
-  setColorScheme(colorScheme);
-  localStorage.colorScheme = colorScheme; // Save preference
-  console.log('Color scheme set to:', colorScheme);
-});
+// select.addEventListener('input', (event) => {
+//   const colorScheme = event.target.value;
+//   setColorScheme(colorScheme);
+//   localStorage.colorScheme = colorScheme; // Save preference
+//   console.log('Color scheme set to:', colorScheme);
+// });
 
 // On page load, apply saved color scheme if available
-if ("colorScheme" in localStorage) {
-  const savedScheme = localStorage.colorScheme;
-  setColorScheme(savedScheme);
-  select.value = savedScheme; // Match dropdown to saved value
-} else {
-  setColorScheme('light dark'); // Default to automatic
-}
+// if ("colorScheme" in localStorage) {
+//   const savedScheme = localStorage.colorScheme;
+//   setColorScheme(savedScheme);
+//   select.value = savedScheme; // Match dropdown to saved value
+// } else {
+//   setColorScheme('light dark'); // Default to automatic
+// }
 
 export async function fetchJSON(url) {
   try {
@@ -102,20 +89,23 @@ export async function fetchJSON(url) {
   }
 }
 
-export async function renderProjects(project, container) {
-  const projectElement = document.createElement('div');
+export function renderProjects(project) {
+  const projectElement = document.createElement('article');
   projectElement.classList.add('project');
   const year = new Date(project.created_at).getFullYear();
   project.image = `/images/${project.name}.png`;
 
   projectElement.innerHTML = `
-      <h3>${project.name}</h3>
+      <h3>
+        <a href="${project.html_url}" target="_blank" rel="noopener" class="project-link">
+          ${project.name}
+        </a>
+      </h3>
       <h3>${year}</h3>
-      <img src="${project.image}" alt="${project.title}" />
       <p>${project.description}</p>
-      `;
+  `;
 
-  container.appendChild(projectElement);
+  return projectElement;
 }
 
 

@@ -2,32 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="Zachary Thomason: Personal site and portfolio" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Zachary Thomason: Personal site and portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zachary Thomason</title>
     <link rel="stylesheet" href="style.css">
-    <script src="global.js" type='module'defer></script>
+    <script src="global.js" type="module" defer></script>
     <script src="index.js" type="module" defer></script>
+    <script src="projects/projects.js" type="module"defer></script>
 </head>
+
 <body>
-    <div id="profile-stats"></div>
-    <h2>Latest Projects</h2>
-    <div class="projects">
-        <!-- Dynamically added content will appear here -->
-    </div>
     <!-- Navigation bar at the top -->
-    <nav>
-        <ul>
-            <!-- <li><a href="/">Home</a></li>
-            <li><a href="projects/index.html">Projects</a></li>
-            <li><a href="contact/index.html">Contact</a></li>
-            <li><a href="resume/index.html">Resume</a></li>
-            <li><a href="https://github.com/ZachUCSD" target="_blank">GitHub</a></li> -->
-        </ul>
-    </nav>
+    <div class="nav-title">:3</div>
+    <div class= "navwrapper"> </div>
+    <!-- <img class= "banner" src="images/temp.jpg" alt="A detailed
+      description of the primary subject, their actions, the surrounding environment, any visible text, and the emotional tone of the scene"> -->
+    <div class="typer">
+        <h1><span class="auto-type"></span></h1>
+    </div>
+      <!-- <h1>Zachary Thomason</h1> -->
+        <div class="description-container">
+            <img class="profile-pic" src="images/cute_cat.jpg" alt="Zachary Thomason's profile picture">
+                <div id="description">
+                <p>Aspiring data scientist with a passion for applied machine learning, data visualization, and game analytics. Experienced in building ML pipelines, working with real-world datasets, and developing interactive visualizations.</p>
+                
+            </div>
+        </div>
+        <div id="profile-stats"></div>
+        <section id="projects">
+        <h1><span style="color: #CC9933;">Latest Projects</span></h1>
+        
+        <div class="projects">
+            <!-- Dynamically added content will appear here -->
+        </div>
+    </section>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".auto-type", {
+            strings: ["Welcome to my Website^2000","Please Explore","Zachary Thomason"],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: false
+        });
+    </script>
 
-    <h1>Zachary Thomason</h1>
-    <p>Hi, my name is Zachary, and I am a DSC major.</p>
-    <img src="images/cute_cat.jpg" alt="A cute cat" />
+    <section id="contact">
+        <h1><span style="color: #CC9933;">Contact</span></h1>
 
+        <h2>If you would like to get in touch, please use the form below:</h2>
+        <form
+            action="https://formspree.io/f/myzpvnqn"
+            method="POST"
+            class="contact-form"
+        >
+
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="email" required>
+
+            <label for="subject">Subject:</label>
+            <input id="subject" name="subject" required>
+
+            <label for="body">Message:</label>
+            <textarea id="body" name="body" rows="5" required></textarea>
+
+            <button type="submit">Send</button>
+
+        </form>
+
+    </section>
 </body>
 </html>
