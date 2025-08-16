@@ -26,7 +26,7 @@ for (const p of pages) {
 
   // Only prepend repoName for local relative URLs (not anchors or external links)
   if (!url.startsWith('http') && !url.startsWith('#')) {
-    url = `/${repoName}/${url}`;
+    url = `${url}/${repoName}/`;
   }
 
   // Create the <a> element and set its attributes
