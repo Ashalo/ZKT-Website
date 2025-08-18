@@ -1,51 +1,44 @@
 console.log('IT’S ALIVE!');
 
-// function $$(selector, context = document) {
-//   return Array.from(context.querySelectorAll(selector));
-// }
+const repoName = "ZKT-Website"; // GitHub
+const base = `/${repoName}/`;
 
-// Step 3.1: Automatically generate the navigation menu
-repoName = 'ZKT-Website'; // Replace with your actual repository name
 const pages = [
-    { url: '', title: 'Home' },
-    { url: '#projects', title: 'Projects' },
-    { url: '#contact', title: 'Contact' },
-    { url: './resume/', title: 'Resume' },
-    { url: 'https://github.com/Ashalo', title: 'GitHub' },
+  { url: "#home", title: "Home" },
+  { url: "#projects", title: "Projects" },
+  { url: "#contact", title: "Contact" },
+  { url: "resume/", title: "Resume" },
+  { url: "https://github.com/Ashalo", title: "GitHub" },
 ];
-  
-// Check if we are on the home page
-// const ARE_WE_HOME = document.documentElement.classList.contains('home');
-  
-// Create a <nav> element and prepend it to the <body>
-const nav = document.createElement('nav');
-document.querySelector('.navwrapper')?.prepend(nav);
-  
+
+const wrapper = document.querySelector(".navwrapper");
+
 for (const p of pages) {
   let url = p.url;
 
-  // Only prepend repoName for local relative URLs (not anchors or external links)
-  if (!url.startsWith('http') && !url.startsWith('#')) {
-    url = `${url}/${repoName}/`;
+  // Only adjust internal links
+  if (!url.startsWith("http") && !url.startsWith("#")) {
+    url = base + url;
   }
 
-  // Create the <a> element and set its attributes
-  const a = document.createElement('a');
+  const a = document.createElement("a");
   a.href = url;
   a.textContent = p.title;
 
-  // Highlight the current page
-  a.classList.toggle(
-    'current',
-    a.host === location.host && a.pathname === location.pathname
-  );
+  // Highlight current page
+  if (location.pathname === new URL(a.href).pathname) {
+    a.classList.add("current");
+  }
 
-  // Open external links in a new tab
-  a.toggleAttribute('target', a.host !== location.host);
+  // External links → new tab
+  if (a.host !== location.host) {
+    a.target = "_blank";
+    a.rel = "noopener";
+  }
 
-  // Append the link to the <nav>
-  nav.append(a);
+  wrapper.append(a);
 }
+
 
 // Reference the <select> element
 const select = document.querySelector('.color-scheme select');
@@ -54,23 +47,6 @@ const select = document.querySelector('.color-scheme select');
 function setColorScheme(scheme) {
   document.documentElement.style.setProperty('color-scheme', scheme);
 }
-
-// Event listener for dropdown changes
-// select.addEventListener('input', (event) => {
-//   const colorScheme = event.target.value;
-//   setColorScheme(colorScheme);
-//   localStorage.colorScheme = colorScheme; // Save preference
-//   console.log('Color scheme set to:', colorScheme);
-// });
-
-// On page load, apply saved color scheme if available
-// if ("colorScheme" in localStorage) {
-//   const savedScheme = localStorage.colorScheme;
-//   setColorScheme(savedScheme);
-//   select.value = savedScheme; // Match dropdown to saved value
-// } else {
-//   setColorScheme('light dark'); // Default to automatic
-// }
 
 export async function fetchJSON(url) {
   try {

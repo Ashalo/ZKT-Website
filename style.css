@@ -88,12 +88,39 @@ nav {
 }
 
 .navwrapper {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;     
-    width: auto;
-    gap: 1em;
+  position: fixed;        /* stick to top */
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1em;
+  padding: 1em 2em;
+  background: #140A00;    /* solid background */
+  z-index: 1000;
 }
+
+.navwrapper a {
+  text-decoration: none;
+  color: #CC9933;
+  font-weight: 500;
+  font-size: 1em;
+  padding: 0.5em 1em;
+}
+
+.navwrapper a.current {
+  border-bottom: 0.25em solid var(--color-accent);
+}
+
+.navwrapper a:hover {
+  background-color: #7C7C7C;
+  border-radius: 0.5px;
+  border: 0.5px solid #7C7C7C;
+  border-bottom: 0.25em solid var(--color-accent);
+  padding: 0.3em 1em;
+}
+
 
 nav ul {
     display: contents;
