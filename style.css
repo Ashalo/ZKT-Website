@@ -1,8 +1,13 @@
 :root {
-    --color-accent: #CC9933;
-    --border-color: black;
-    /* accent-color: #F5C800; */
-    --text-color: #FFFDD2;
+    --color-accent: green;
+    --color-bg: #AD9E90;
+    --color-secondary: #736F60;
+    --text-color: #000000;
+}
+
+html {
+    overscroll-behavior-y: none;
+    scrollbar-width: none;
 }
 
 form {
@@ -28,7 +33,7 @@ form button {
     width: 100%;
     box-sizing: border-box;
     padding: 0.5em;
-    border: 1px solid #140A00;
+    border: 1px solid --color-secondary;
     border-radius: 4px;
     font: inherit;
 }
@@ -36,7 +41,6 @@ form button {
 form button {
     grid-column: 1 / -1;
     justify-self: flex-end;
-    /* color: #F9F3DC; */
     padding: 0.75em 1.5em;
     border: none;
     border-radius: 4px;
@@ -44,8 +48,87 @@ form button {
 }
 
 form button:hover {
-    background-color: #7C7C7C;
+    background-color: --color-bg;
 }
+
+#home {
+  display: flex;
+  flex-direction: row;      /* Puts them side-by-side */
+  align-items: center;      /* Vertically centers them */
+  justify-content: center;   /* Horizontally centers the pair */
+  gap: 40px;                /* Adds space between the pic and text */
+  padding: 50px 25px 50px 75px;
+  min-height: 100vh;        /* Makes the section fill the screen */
+  align-items: center;
+}
+
+#introduction{
+    display: flex;
+    flex-direction: column;
+}
+
+#introduction h1{
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    white-space: nowrap;
+}
+
+#about {
+    padding: 0 50px 0px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+    max-height: 300px;
+    gap: 0.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image-container img {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.name {
+    margin-bottom: 6px;
+}
+
+.social-links {
+    font-size: 0.75rem;
+    margin-top: 4px;
+    display: flex;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.social-links.show {
+    opacity: 0.85;
+    transform: translateY(0);
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+
 
 .description-container {
     display: flex;
@@ -63,175 +146,124 @@ form button:hover {
     flex: 1;
 }
 
-.nav-title {
-  position: absolute;
-  left: 1em;
-  top: 1em;
-  font-size: 1.2em;
-  color: #CC9933;
-  font-weight: bold;
-  z-index: 1100;
-  width: auto;
+#description p {
+    font-size: 1em;
+    line-height: 1.6;
 }
 
-
-nav {
-  top: 0em;
-  right: 0em;
-  position: absolute;
-  display: flex;
-  justify-content: flex-end; /* Aligns links to the right */
-  align-items: center;
-  width: auto;
-  /* background: linear-gradient(to bottom, #232b2b 0%, #140A00 100%); */
-  padding: 1em 2em;
-}
-
-.navwrapper {
-  position: fixed;        /* stick to top */
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1em;
-  padding: 1em 2em;
-  background: #140A00;    /* solid background */
-  z-index: 1000;
-}
-
-.navwrapper a {
-  text-decoration: none;
-  color: #CC9933;
-  font-weight: 500;
-  font-size: 1em;
-  padding: 0.5em 1em;
-}
-
-.navwrapper a.current {
-  border-bottom: 0.25em solid var(--color-accent);
-}
-
-.navwrapper a:hover {
-  background-color: #7C7C7C;
-  border-radius: 0.5px;
-  border: 0.5px solid #7C7C7C;
-  border-bottom: 0.25em solid var(--color-accent);
-  padding: 0.3em 1em;
-}
-
-
-nav ul {
-    display: contents;
-}
-
-
-/* This is the space around the navigation links */
-nav a {
-  text-decoration: none;
-  color: #CC9933; /* Changed to match body text color */
-  font-weight: 500;
-  font-size: 1em;           /* Make links larger */
-  padding: 0.5em 1em;       /*  Increase padding for larger clickable area */
-  box-sizing: border-box;
-  justify-content: flex-end;
-}
-
-nav a.current {
-  border-bottom: 0.25em solid var(--color-accent);
-}
-
-nav a:hover {
-  background-color: #7C7C7C;
-  border-radius: 0.5px;
-  border: 0.5px solid #7C7C7C;
-  border-bottom: 0.25em solid var(--color-accent);
-  padding: 0.3em 1em; /* Keep horizontal padding, shrink vertical only */
-}
-
-.banner {
-    width: 100%;
-    height: auto;
-    display: block;
-    padding: 1em;
-    /* margin-bottom: 1em; */
-    border-radius: 8px; /* Optional: add some rounding to the corners */
-}
-
-.typer {
-    width: 100vw;
-    max-width: 100%;
-    height: 100vh;
-    padding: 0em 0em;
-    color: #fff;
+/* Side Navigation */
+.sidenav {
+    height: 100%;
+    width: 100px;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: linear-gradient(to bottom, var(--color-secondary) 0%, var(--color-bg) 100%);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    /* padding-top: 2em; */
 }
 
-.typer h1{
-    font-size: 80px;
-    font-weight: 700px;
+.sidenav a {
+    padding: 12px 12px;
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--text-color);
+    display: block;
+    text-align: center;
 }
 
-span{
-    color: var(--text-color)
+.sidenav a:first-child::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 20px;
+    background: #000;
+    margin: 0 auto 8px;
+}
+
+.sidenav a:last-child::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 20px;
+    background: #000;
+    margin: 8px auto 0;
+}
+
+.sidenav a:hover {
+    color: var(--color-accent);
 }
 
 body {
     width: 100%;
-    max-width: 100vw;
-    margin: 0 auto;
+    max-width: calc(100vw - 100px);
+    margin: 0;
+    margin-right: 100px;
     box-sizing: border-box;
     padding-inline: 2em 2em;
-    /* margin-inline: max(1em, (100% - 100ch) / 2); */
     font: 100%/1.5 system-ui;
-    /* background: linear-gradient(to bottom, #232b2b 0%, #140A00 100%); */
-    /* background: linear-gradient(to bottom, #7C7C7C 0%, #140A00 100%); */
-    background: linear-gradient(to bottom, #140A00 0%,  #7C7C7C 100%); 
+    background: linear-gradient(to bottom, var(--color-secondary) 0%, var(--color-bg) 100%);
     color: var(--text-color);
-    padding-top: 3em; /* Increased to prevent nav overlap */
+    /* padding-top: 3em; */
     overflow-x: hidden;
+    /* display: flex; */
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    
+}
+
+body::-webkit-scrollbar { /* WebKit */
+    display: none;
+}
+
+#projects,
+#contact {
+    padding-inline: 50px;
 }
 
 /* Project grid */
 .projects {
-    display: grid;
+    display: column;
     grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
-    gap: 1em;
-    padding: 1em 1em 1em 1em; /* Add more right and left padding */
-    width: 100vw;
+    gap: 1.5em;
+    padding: 10px 1em 50px;
+    width: 100%;
     max-width: 100%;
-    border: 2px solid #7C7C7C;
+    border: 2px solid --color-bg;
     box-sizing: border-box;
     overflow-x: auto;
     overflow-y: visible;
+    border-color: #000000;
 }
-
 
 .projects article {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: top;
-    width: 100%;      /* Fill the grid cell horizontally */
-    height: 100%;     /* Fill the grid cell vertically */
-    background: #7C7C7C;
+    padding: 0em 5em;
+    width: 100%;
+    height: 100%;
+    background: --color-bg;
     color: var(--text-color);
-    padding: 1em 2em;
-    border: none;
+    padding: 0.6em 1em;
+    border: 1px solid var(--color-accent);
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     cursor: pointer;
     font-size: 1.1em;
     transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
     box-sizing: border-box;
+    border-color: #000000;
 }
 
 .projects article:hover {
-    background: #FFFDD2;
-    color: #140A00;
+    background: var(--color-secondary);
+    color: --color-secondary;
     box-shadow: 0 4px 16px rgba(204, 153, 51, 0.2);
     transform: translateY(-2px) scale(1.03);
 }
@@ -242,9 +274,11 @@ body {
     line-height: 1.4;
 }
 
+
 .projects img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     display: block;
 }
 
@@ -287,7 +321,7 @@ h3 {
 .profile-stats {
     margin-top: 20px;
     padding: 15px;
-    background-color: #f4f4f4;
+    background-color: var(--color-bg);
     border-radius: 5px;
 }
 
@@ -324,7 +358,7 @@ path {
     color: inherit;
 }
 
-/* Override the generic form grid for contact form */
+/* Contact form */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -363,7 +397,7 @@ path {
 
 .contact-form button {
     align-self: flex-start;
-    background-color: #CC9933;
+    background-color: --color-accent;
     color: white;
     padding: 0.8rem 1.5rem;
     border: none;
@@ -374,7 +408,11 @@ path {
 }
 
 .contact-form button:hover {
-    background-color: #b3832c;
+    background-color: var(--color-accent);
 }
 
-
+.last-updated {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    margin-top: 0.5rem;
+}

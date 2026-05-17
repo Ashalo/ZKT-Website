@@ -1,49 +1,39 @@
-import {renderProjects, fetchGitHubData} from './global.js';
+import { fetchJSON, renderProjects } from './global.js';
 
 async function loadLatestProjects() {
     try {
-        // Fetch all the projects
-        const projects = await fetchGitHubData('Ashalo') // This will show you the full JSON response in your browser console
-        
-        
-        // Filter the latest 3 projects
-        const latestProjects = projects.slice(0, 3);
-        
-        // Check if we have projects
-        if (latestProjects.length === 0) {
+        const projects = await fetchJSON('./lib/projects.json');
+
+        if (!projects || projects.length === 0) {
             console.error('No projects available.');
             return;
         }
-        console.log(latestProjects)
 
-        // Select the projects container in the HTML
+        projects.sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated));
+
+        const latestProjects = projects.slice(0, 5);
+
         const projectsContainer = document.querySelector('.projects');
         if (!projectsContainer) {
             console.error('Projects container not found!');
             return;
         }
 
+        projectsContainer.innerHTML = '';
+        latestProjects.forEach(project => {
+            const link = document.createElement('a');
+            link.href = project.url || '#';
+            link.className = 'project-link';
+            link.style.textDecoration = 'none';
+            link.style.color = 'inherit';
 
-        projectsContainer.innerHTML = '';  // Clear the container before appending
-        latestProjects.forEach(latestProjects => renderProjects(latestProjects, projectsContainer));
+            const article = renderProjects(project);
+            link.appendChild(article);
+            projectsContainer.appendChild(link);
+        });
     } catch (error) {
         console.error('Error loading the latest projects:', error);
     }
 }
 
-async function loadGitHubData() {
-    try {
-      const githubData = await fetchGitHubData('Ashalo');
-      console.log(githubData);  // Log the data to verify it's being fetched correctly
-      
-    } catch (error) {
-      console.error('Error fetching GitHub data:', error);
-    }
-  }
-  
-  
-loadGitHubData();
-
-// Call the function to display the latest projects
 loadLatestProjects();
-

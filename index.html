@@ -8,42 +8,94 @@
     <link rel="stylesheet" href="style.css">
     <script src="/global.js" type="module" defer></script>
     <script src="index.js" type="module" defer></script>
-    <script src="projects/projects.js" type="module"defer></script>
 </head>
-<section id="home"></section>
 <body>
-    <!-- Navigation bar at the top -->
-    
-    <div class="nav-title">:3</div>
-    <div class= "navwrapper"> </div>
-    <!-- <img class= "banner" src="images/temp.jpg" alt="A detailed
-      description of the primary subject, their actions, the surrounding environment, any visible text, and the emotional tone of the scene"> -->
-    <div class="typer">
-        <h1><span class="auto-type"></span></h1>
-    </div>
-      <!-- <h1>Zachary Thomason</h1> -->
-        <div class="description-container">
-            <img class="profile-pic" src="images/image.jpg" alt="Zachary Thomason's profile picture">
-                <div id="description">
-                <p>Aspiring data scientist with a passion for applied machine learning, data visualization, and game analytics. Experienced in building ML pipelines, working with real-world datasets, and developing interactive visualizations.</p>
-                
-            </div>
-        </div>
-        <div id="profile-stats"></div>
-        <section id="projects">
-        <h1><span style="color: #CC9933;">Latest Projects</span></h1>
+    <!-- Side Navigation -->
+    <nav class="sidenav">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="resume/">Resume</a>
+        <a href="https://github.com/Ashalo" target="_blank">GitHub</a>
+    </nav>
+
+    <section id="home">
         
+        <figure class="image-container">
+            <img class="profile-pic" src="images/me.jpg" alt="Zachary Thomason's profile picture">
+            <figcaption>Zachary Thomason</figcaption>
+        </figure>
+
+        <section id="introduction">
+            
+            <h1><span class="auto-type"></span></h1>
+
+            <div id="social-links" class="social-links">
+                <a href="https://github.com/Ashalo" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/zachary-thomason" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+    
+    </section>
+
+    <section id="about">
+        <h1 style="color: #CC9933;">About Me</h1>
+        <div class="description-container">
+            <div id="description">
+                <p>
+                    Aspiring data scientist specializing in applied machine learning, LLM evaluation systems, and interpretable data visualization. Experienced in designing modular, metric-driven experimentation pipelines, engineering domain-specific features from complex real-world datasets, and building interactive visual analytics tools that make model behavior legible to both technical and non-technical stakeholders.
+                </p>
+
+                <p>
+                    I have worked extensively with probabilistic models, logistic regression, and feature engineering to surface signal from noisy data, and I am particularly interested in how evaluation frameworks shape the reliability and trustworthiness of generative AI systems. My work emphasizes rigorous experimentation, reproducibility, and measurable performance improvements through systematic iteration rather than ad-hoc tuning.
+                </p>
+
+                <p>
+                    Beyond modeling, I focus on creating tools and visual systems that expose why a model behaves the way it does. This includes building dashboards, interactive visualizations, and evaluation pipelines that allow users to diagnose errors, interpret model decisions, and compare model behavior across scenarios. I am especially drawn to problems involving human behavioral data, game analytics, and environments where probabilistic reasoning and uncertainty play a central role.
+                </p>
+
+                <p>
+                    My broader goal is to build machine learning systems that are not only performant, but transparent, testable, and grounded in well-designed evaluation methodology.
+                </p>
+            </div>
+            <img src="images/me.jpg" alt="Zachary Thomason" class="description-image">
+        </div>
+        
+        <div id="profile-stats"></div>
+    
+    </section>
+
+    <section id="projects">
+        <h1 style="color: #CC9933;">Latest Projects</h1>
         <div class="projects">
-            <!-- Dynamically added content will appear here -->
         </div>
     </section>
+    
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed(".auto-type", {
-            strings: ["Welcome to my Website^2000","Please Explore","Zachary Thomason"],
+            strings: [
+                "Welcome to my website^2000",
+                "Please explore",
+                "Zachary Thomason"
+            ],
             typeSpeed: 50,
             backSpeed: 50,
-            loop: false
+            loop: false,
+                                        
+            onComplete: function () {
+                document.getElementById("social-links").classList.add("show");
+            }
         });
     </script>
 

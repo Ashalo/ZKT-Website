@@ -3,42 +3,6 @@ console.log('IT’S ALIVE!');
 const repoName = "ZKT-Website"; // GitHub
 const base = `/${repoName}/`;
 
-const pages = [
-  { url: "#home", title: "Home" },
-  { url: "#projects", title: "Projects" },
-  { url: "#contact", title: "Contact" },
-  { url: "resume/", title: "Resume" },
-  { url: "https://github.com/Ashalo", title: "GitHub" },
-];
-
-const wrapper = document.querySelector(".navwrapper");
-
-for (const p of pages) {
-  let url = p.url;
-
-  // Only adjust internal links
-  if (!url.startsWith("http") && !url.startsWith("#")) {
-    url = base + url;
-  }
-
-  const a = document.createElement("a");
-  a.href = url;
-  a.textContent = p.title;
-
-  // Highlight current page
-  if (location.pathname === new URL(a.href).pathname) {
-    a.classList.add("current");
-  }
-
-  // External links → new tab
-  if (a.host !== location.host) {
-    a.target = "_blank";
-    a.rel = "noopener";
-  }
-
-  wrapper.append(a);
-}
-
 
 // Reference the <select> element
 const select = document.querySelector('.color-scheme select');
@@ -70,17 +34,13 @@ export async function fetchJSON(url) {
 export function renderProjects(project) {
   const projectElement = document.createElement('article');
   projectElement.classList.add('project');
-  const year = new Date(project.created_at).getFullYear();
-  project.image = `/images/${project.name}.png`;
 
   projectElement.innerHTML = `
-      <h3>
-        <a href="${project.html_url}" target="_blank" rel="noopener" class="project-link">
-          ${project.name}
-        </a>
-      </h3>
-      <h3>${year}</h3>
+      <h3>${project.title}</h3>
+      ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''}
+      <h3>${project.lastUpdated}</h3>
       <p>${project.description}</p>
+      <p class="last-updated">Created: ${project.year}</p>
   `;
 
   return projectElement;
