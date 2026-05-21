@@ -23,6 +23,7 @@ async function loadLatestProjects() {
         latestProjects.forEach(project => {
             const link = document.createElement('a');
             link.href = project.url || '#';
+            link.target = '_blank';
             link.className = 'project-link';
             link.style.textDecoration = 'none';
             link.style.color = 'inherit';

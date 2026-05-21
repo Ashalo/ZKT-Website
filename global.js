@@ -35,12 +35,14 @@ export function renderProjects(project) {
   const projectElement = document.createElement('article');
   projectElement.classList.add('project');
 
-  projectElement.innerHTML = `
-      <h3>${project.title}</h3>
-      ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''}
-      <h3>${project.lastUpdated}</h3>
-      <p>${project.description}</p>
-      <p class="last-updated">Created: ${project.year}</p>
+  projectElement.innerHTML = ` 
+        <h3>${project.title}</h3>
+        ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''} 
+        <h3>${project.lastUpdated}</h3>
+      <div class="project-text">
+        <p>${project.description}</p>
+      </div>
+        <p class="last-updated">Created: ${project.year}</p>
   `;
 
   return projectElement;

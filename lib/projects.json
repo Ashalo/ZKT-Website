@@ -1,6 +1,6 @@
 [
     {
-        "title": "League of Legends Snowball Analysis",
+        "title": "League of Legends Analysis",
         "year": 2024,
         "lastUpdated": "Last Updated: May 2024",
         "image": "images/league.svg",
@@ -16,15 +16,15 @@
         "url": "https://github.com/Ashalo"
     },
     {
-        "title": "PDTyper",
+        "title": "Parkinson's Disease Typing Demonstration",
         "year": 2025,
         "lastUpdated": "Last Updated: March 2025",
-        "image": "images/pd.jfif",
+        "image": "images/keyboard.jpg",
         "description": "Built an interactive website that visualizes how Parkinson's medication affects typing behavior using real-world keystroke data. Implemented D3.js visualizations and animations for medicated vs. unmedicated typing latency and accuracy. Designed and styled a responsive front-end interface highlighting medication effects and data-driven insights.",
         "url": "https://github.com/Ashalo"
     },
     {
-        "title": "LoL Region Playstyle Analysis",
+        "title": "LoL Regional Playstyle Analysis",
         "year": 2025,
         "lastUpdated": "Last Updated: April 2025",
         "image": "images/teams.jpg",
@@ -34,7 +34,7 @@
     {
         "title": "LLM Eval Systems Framework",
         "year": 2025,
-        "lastUpdated": "Last Updated: May 2025",
+        "lastUpdated": "Last Updated: March 2026",
         "image": "images/judge.png",
         "description": "A modular framework for evaluating large language model outputs using custom judge metrics, automated test suites, and comparative analysis across multiple model providers.",
         "url": "https://github.com/Ashalo"

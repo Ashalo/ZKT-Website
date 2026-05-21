@@ -12,11 +12,18 @@
 <body>
     <!-- Side Navigation -->
     <nav class="sidenav">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="resume/">Resume</a>
-        <a href="https://github.com/Ashalo" target="_blank">GitHub</a>
+        <div class="sidenav-inner">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="sidenav-footer">
+            <a href="https://github.com/Ashalo" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/zachary-thomason" target="_blank">LinkedIn</a>
+            <a href="resume/" target="_blank">Resume</a>
+        </div>
     </nav>
 
     <section id="home">
@@ -29,6 +36,8 @@
         <section id="introduction">
             
             <h1><span class="auto-type"></span></h1>
+
+            <p id="subtitle" class="subtitle">AI/ML Data Scientist</p>
 
             <div id="social-links" class="social-links">
                 <a href="https://github.com/Ashalo" target="_blank">
@@ -43,13 +52,19 @@
                     </svg>
                     LinkedIn
                 </a>
+                <a href="resume/" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M4 0h5.5L14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5h-3.5A1.5 1.5 0 0 1 8 3.5V1H4zm5 .7L12.3 5H9V1.7zM5 8h6v1H5V8zm0 3h6v1H5v-1z"/>
+                    </svg>
+                    Resume
+                </a>
             </div>
         </section>
     
     </section>
 
     <section id="about">
-        <h1 style="color: #CC9933;">About Me</h1>
+        <h1 style="color: #00897B;">About Me</h1>
         <div class="description-container">
             <div id="description">
                 <p>
@@ -68,15 +83,56 @@
                     My broader goal is to build machine learning systems that are not only performant, but transparent, testable, and grounded in well-designed evaluation methodology.
                 </p>
             </div>
-            <img src="images/me.jpg" alt="Zachary Thomason" class="description-image">
+            <img src="images/pic3.jpg" alt="Zachary Thomason" class="description-image">
         </div>
         
         <div id="profile-stats"></div>
     
     </section>
 
+    <section id="skills">
+        <h1 style="color: #00897B;">Skills</h1>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Machine Learning & AI</h3>
+                <ul>
+                    <li>Applied ML & Probabilistic Models</li>
+                    <li>LLM Evaluation Systems</li>
+                    <li>Feature Engineering</li>
+                    <li>Logistic Regression</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Data & Visualization</h3>
+                <ul>
+                    <li>Data Visualization & Dashboards</li>
+                    <li>Interactive Visual Analytics</li>
+                    <li>Interpretable AI</li>
+                    <li>Experimentation Pipelines</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Languages & Tools</h3>
+                <ul>
+                    <li>Python, R, SQL</li>
+                    <li>JavaScript / TypeScript</li>
+                    <li>Git & CI/CD</li>
+                    <li>Web Development</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <section id="projects">
-        <h1 style="color: #CC9933;">Latest Projects</h1>
+        <div class="section-header">
+            <h1 style="color: #00897B;">Latest Projects</h1>
+            <a href="https://github.com/Ashalo" target="_blank" class="header-link">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                GitHub
+            </a>
+        </div>
         <div class="projects">
         </div>
     </section>
@@ -85,7 +141,7 @@
     <script>
         var typed = new Typed(".auto-type", {
             strings: [
-                "Welcome to my website^2000",
+                "Welcome",
                 "Please explore",
                 "Zachary Thomason"
             ],
@@ -94,15 +150,28 @@
             loop: false,
                                         
             onComplete: function () {
+                document.getElementById("subtitle").classList.add("show");
                 document.getElementById("social-links").classList.add("show");
             }
         });
     </script>
 
     <section id="contact">
-        <h1><span style="color: #CC9933;">Contact</span></h1>
-        <h2>If you would like to get in touch, please use the form below:</h2>
+        <h1><span style="color: #00897B;">Contact</span></h1>
+        <div class="contact-card">
+            <p class="contact-intro">I'm always open to discussing new opportunities, collaborations, or just chatting about data and ML. Reach out anytime:</p>
+            <p class="contact-email">
+                <a href="mailto:zkthomason@gmail.com">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                    zkthomason@gmail.com
+                </a>
+            </p>
+        </div>
 
+        <!--
         <form
             action="https://formspree.io/f/myzpvnqn"
             method="POST"
@@ -125,6 +194,7 @@
 
             <button type="submit">Send</button>
         </form>
+        -->
     </section>
 </body>
 </html>
