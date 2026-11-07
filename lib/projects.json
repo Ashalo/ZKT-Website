@@ -5,7 +5,7 @@
         "lastUpdated": "Last Updated: May 2024",
         "image": "images/league.svg",
         "description": "Utilized advanced statistical techniques to analyze factors contributing to victory in professional League of Legends matches. Implemented linear regression, decision trees, and random forest models. Performed cross-validation and hyperparameter tuning to increase prediction accuracy from 77% to 84%. Designed and published a comprehensive web-based visualization of analytical findings.",
-        "url": "https://github.com/Ashalo"
+        "url": "https://github.com/Ashalo/LOLAnalysis"
     },
     {
         "title": "Music Genre Classifier",
@@ -13,7 +13,7 @@
         "lastUpdated": "Last Updated: November 2024",
         "image": "images/midi_keyboard.jpg",
         "description": "Engineered over 1 million MIDI data entries from the Lakh dataset to train genre classification models. Conducted comprehensive preprocessing, including oversampling, one-hot encoding, label encoding, imputation, and scaling. Implemented support vector machine, decision tree classifier, and KNN models. Achieved 63% accuracy after model tuning and cross-validation.",
-        "url": "https://github.com/Ashalo"
+        "url": "https://github.com/Ashalo/MIDI_Song_Prediction"
     },
     {
         "title": "Parkinson's Disease Typing Demonstration",
@@ -21,7 +21,7 @@
         "lastUpdated": "Last Updated: March 2025",
         "image": "images/keyboard.jpg",
         "description": "Built an interactive website that visualizes how Parkinson's medication affects typing behavior using real-world keystroke data. Implemented D3.js visualizations and animations for medicated vs. unmedicated typing latency and accuracy. Designed and styled a responsive front-end interface highlighting medication effects and data-driven insights.",
-        "url": "https://github.com/Ashalo"
+        "url": "https://github.com/Ashalo/Typer"
     },
     {
         "title": "LoL Regional Playstyle Analysis",
@@ -29,7 +29,7 @@
         "lastUpdated": "Last Updated: April 2025",
         "image": "images/teams.jpg",
         "description": "Conducted comparative analysis of Eastern vs. Western League of Legends professional teams. Engineered features to quantify regional playstyle differences (e.g., jungle proximity, early-game aggression). Trained machine learning models (Logistic Regression, Random Forest) to classify team regions with up to 85% accuracy. Authored a 5-page research report highlighting statistical trends and strategic preferences.",
-        "url": "https://github.com/Ashalo"
+        "url": "https://drive.google.com/file/d/1y8D9st06tcVM-fOqGOsGVIh9-jdC2AYK/view?usp=sharing"
     },
     {
         "title": "LLM Eval Systems Framework",
@@ -37,6 +37,6 @@
         "lastUpdated": "Last Updated: March 2026",
         "image": "images/judge.png",
         "description": "A modular framework for evaluating large language model outputs using custom judge metrics, automated test suites, and comparative analysis across multiple model providers.",
-        "url": "https://github.com/Ashalo"
+        "url": "https://github.com/Ashalo/llm-eval-systems-framework"
     }
 ]
