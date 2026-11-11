@@ -141,7 +141,7 @@ form button:hover {
 
 .description-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.5rem
 }
 
@@ -158,6 +158,10 @@ form button:hover {
 #description p {
     font-size: 1em;
     line-height: 1.6;
+}
+
+#description p:first-child {
+    margin-top: 0;
 }
 
 /* Side Navigation */
@@ -373,7 +377,8 @@ body::-webkit-scrollbar {
 /* Project grid */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(50vw, 1fr));
+    grid-template-columns: minmax(0, 50rem);
+    justify-content: center;
     gap: 1.5em;
     padding: 10px 2em 50px;
     padding-top: 2em;
@@ -561,4 +566,150 @@ path {
     font-size: 0.85rem;
     color: var(--color-accent);
     margin-top: 0.5rem;
+}
+
+@media (max-width: 1264px) {
+    #introduction {
+        min-width: 0;
+    }
+
+    #introduction h1 {
+        font-size: clamp(2rem, 6vw, 4rem);
+        white-space: normal;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1264px) {
+    .image-container {
+        width: 200px;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        width: 100%;
+        max-width: none;
+        margin-right: 0;
+        padding-bottom: 5rem;
+    }
+
+    .sidenav {
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        min-height: 3.5rem;
+        padding: 0.35rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidenav-inner,
+    .sidenav-footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidenav-inner::before,
+    .sidenav-footer::after {
+        display: none;
+    }
+
+    .sidenav-footer {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .sidenav a {
+        padding: 0.4rem clamp(0.35rem, 2vw, 0.75rem);
+        font-size: clamp(0.7rem, 2.5vw, 0.875rem);
+    }
+
+    #home {
+        flex-direction: column;
+        gap: 1.5rem;
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    #introduction {
+        align-items: center;
+        min-width: 0;
+    }
+
+    #introduction h1 {
+        font-size: clamp(1.75rem, 9vw, 3.5rem);
+        white-space: normal;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .description-container {
+        flex-direction: column;
+    }
+
+    .description-image {
+        width: 100%;
+        max-width: 28rem;
+        align-self: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 15.625rem), 1fr));
+    }
+
+    .projects {
+        padding-inline: 0;
+    }
+
+    .projects article {
+        aspect-ratio: auto;
+    }
+
+    .contact-card {
+        padding: clamp(1rem, 5vw, 2rem);
+    }
+
+    .contact-email {
+        padding: 0.5rem 0;
+        font-size: 1rem;
+    }
+
+    .contact-email a {
+        max-width: 100%;
+        padding: 0.75rem 1rem;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    #about,
+    #skills,
+    #projects,
+    #contact {
+        padding-inline: 1rem;
+    }
+
+    .section-header {
+        flex-wrap: wrap;
+    }
 }

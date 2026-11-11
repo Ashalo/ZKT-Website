@@ -28,7 +28,7 @@
         "year": 2025,
         "lastUpdated": "Last Updated: April 2025",
         "image": "images/teams.jpg",
-        "description": "Conducted comparative analysis of Eastern vs. Western League of Legends professional teams. Engineered features to quantify regional playstyle differences (e.g., jungle proximity, early-game aggression). Trained machine learning models (Logistic Regression, Random Forest) to classify team regions with up to 85% accuracy. Authored a 5-page research report highlighting statistical trends and strategic preferences.",
+        "description": "Analyzed professional League of Legends match data from 2020–2024 to investigate regional differences in competitive play between Eastern (LCK/LPL) and Western (LEC/LCS) teams. Performed exploratory data analysis on champion selections, bans, and in-game performance metrics to identify potential differences in regional strategies. Developed and evaluated Logistic Regression and Random Forest classifiers to predict team region based on gameplay statistics, using GridSearchCV for hyperparameter optimization and class balancing to address regional data imbalance. Achieved 77.48% classification accuracy, demonstrating measurable differences in gameplay patterns across regions.",
         "url": "https://drive.google.com/file/d/1y8D9st06tcVM-fOqGOsGVIh9-jdC2AYK/view?usp=sharing"
     },
     {
