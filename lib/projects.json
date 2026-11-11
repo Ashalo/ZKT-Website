@@ -1,18 +1,10 @@
 [
     {
-        "title": "League of Legends Analysis",
-        "year": 2024,
-        "lastUpdated": "Last Updated: May 2024",
-        "image": "images/league.svg",
-        "description": "Utilized advanced statistical techniques to analyze factors contributing to victory in professional League of Legends matches. Implemented linear regression, decision trees, and random forest models. Performed cross-validation and hyperparameter tuning to increase prediction accuracy from 77% to 84%. Designed and published a comprehensive web-based visualization of analytical findings.",
-        "url": "https://github.com/Ashalo/LOLAnalysis"
-    },
-    {
         "title": "Music Genre Classifier",
         "year": 2024,
         "lastUpdated": "Last Updated: November 2024",
         "image": "images/midi_keyboard.jpg",
-        "description": "Engineered over 1 million MIDI data entries from the Lakh dataset to train genre classification models. Conducted comprehensive preprocessing, including oversampling, one-hot encoding, label encoding, imputation, and scaling. Implemented support vector machine, decision tree classifier, and KNN models. Achieved 63% accuracy after model tuning and cross-validation.",
+        "description": "Explored machine learning for music genre classification using MIDI data from the Lakh Dataset. Engineered features capturing tempo, instrumentation, rhythm, and melodic structure, and developed a preprocessing pipeline incorporating imputation, encoding, normalization, and resampling to address missing data and class imbalance.\n\nCompared Linear and RBF SVMs, Decision Trees, and KNN using cross-validation and held-out testing. Achieved approximately 59% test accuracy with KNN, identifying class imbalance and generalization as key challenges.",
         "url": "https://github.com/Ashalo/MIDI_Song_Prediction"
     },
     {
@@ -20,7 +12,7 @@
         "year": 2025,
         "lastUpdated": "Last Updated: March 2025",
         "image": "images/keyboard.jpg",
-        "description": "Built an interactive website that visualizes how Parkinson's medication affects typing behavior using real-world keystroke data. Implemented D3.js visualizations and animations for medicated vs. unmedicated typing latency and accuracy. Designed and styled a responsive front-end interface highlighting medication effects and data-driven insights.",
+        "description": "Built an interactive website that visualizes how Parkinson's medication affects typing behavior using real-world keystroke data. Implemented D3.js visualizations and animations for medicated vs. unmedicated typing latency and accuracy.",
         "url": "https://github.com/Ashalo/Typer"
     },
     {
