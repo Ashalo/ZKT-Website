@@ -1,2 +1,2 @@
 # ZKT Portfolio
- DSC106 Portfolio
+Zachary Thomason's website
