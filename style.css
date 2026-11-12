@@ -145,9 +145,11 @@ form button:hover {
     gap: 1.5rem
 }
 
-.description-image{
-    max-width: 40%;
-    height: auto;
+.description-image {
+    width: 40%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 70%;
     border-radius: 8px;
 }
 
