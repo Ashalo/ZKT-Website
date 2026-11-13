@@ -35,12 +35,17 @@ export function renderProjects(project) {
   const projectElement = document.createElement('article');
   projectElement.classList.add('project');
 
+  const skillsMarkup = project.skills && project.skills.length
+    ? `<div class="project-skills">${project.skills.map(skill => `<span class="project-skill">${skill}</span>`).join('')}</div>`
+    : '';
+
   projectElement.innerHTML = ` 
         <h3>${project.title}</h3>
         ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''} 
         <h3>${project.lastUpdated}</h3>
       <div class="project-text">
         <p>${project.description}</p>
+        ${skillsMarkup}
       </div>
         <p class="last-updated">Created: ${project.year}</p>
   `;

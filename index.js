@@ -9,7 +9,7 @@ async function loadLatestProjects() {
             return;
         }
 
-        projects.sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated));
+        projects.sort((a, b) => new Date(b.date || b.lastUpdated) - new Date(a.date || a.lastUpdated));
 
         const latestProjects = projects.slice(0, 5);
 

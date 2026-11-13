@@ -1,34 +1,89 @@
 [
     {
-        "title": "Music Genre Classifier",
-        "year": 2024,
-        "lastUpdated": "Last Updated: November 2024",
-        "image": "images/midi_keyboard.jpg",
-        "description": "Explored machine learning for music genre classification using MIDI data from the Lakh Dataset. Engineered features capturing tempo, instrumentation, rhythm, and melodic structure, and developed a preprocessing pipeline incorporating imputation, encoding, normalization, and resampling to address missing data and class imbalance.\n\nCompared Linear and RBF SVMs, Decision Trees, and KNN using cross-validation and held-out testing. Achieved approximately 59% test accuracy with KNN, identifying class imbalance and generalization as key challenges.",
-        "url": "https://github.com/Ashalo/MIDI_Song_Prediction"
+        "title": "LLM Evaluation Systems",
+        "year": 2026,
+        "date": "2026-03-01",
+        "lastUpdated": "Last Updated: March 2026",
+        "image": "images/judge.png",
+        "description": "Developed a modular LLM evaluation framework to assess lecture summaries across multiple quality dimensions. Designed ensemble-based evaluation systems, iterative refinement pipelines, and adaptive stopping criteria to improve summary quality through systematic experimentation.",
+        "skills": [
+            "Python",
+            "LLM Evaluation",
+            "Prompt Engineering",
+            "NLP",
+            "Experiment Design",
+            "Statistical Analysis",
+            "Evaluation Metrics",
+            "Iterative Refinement",
+            "Ensemble Evaluation",
+            "Pipeline Development"
+        ],
+        "url": "https://github.com/Ashalo/llm-eval-systems-framework"
     },
     {
-        "title": "Parkinson's Disease Typing Demonstration",
+        "title": "Professional Esports Playstyle Analysis",
         "year": 2025,
-        "lastUpdated": "Last Updated: March 2025",
-        "image": "images/keyboard.jpg",
-        "description": "Built an interactive website that visualizes how Parkinson's medication affects typing behavior using real-world keystroke data. Implemented D3.js visualizations and animations for medicated vs. unmedicated typing latency and accuracy.",
-        "url": "https://github.com/Ashalo/Typer"
-    },
-    {
-        "title": "LoL Regional Playstyle Analysis",
-        "year": 2025,
+        "date": "2025-04-01",
         "lastUpdated": "Last Updated: April 2025",
         "image": "images/teams.jpg",
-        "description": "Analyzed professional League of Legends match data from 2020–2024 to investigate regional differences in competitive play between Eastern (LCK/LPL) and Western (LEC/LCS) teams. Performed exploratory data analysis on champion selections, bans, and in-game performance metrics to identify potential differences in regional strategies. Developed and evaluated Logistic Regression and Random Forest classifiers to predict team region based on gameplay statistics, using GridSearchCV for hyperparameter optimization and class balancing to address regional data imbalance. Achieved 77.48% classification accuracy, demonstrating measurable differences in gameplay patterns across regions.",
+        "description": "Analyzed over 55,000 professional League of Legends matches to identify regional gameplay patterns. Engineered domain-specific features and compared supervised classification models to distinguish Eastern and Western teams, achieving 77.48% accuracy with a Random Forest classifier.",
+        "skills": [
+            "Python",
+            "Pandas",
+            "NumPy",
+            "Scikit-learn",
+            "Feature Engineering",
+            "Logistic Regression",
+            "Random Forest",
+            "Supervised Learning",
+            "Cross-Validation",
+            "Classification Metrics",
+            "Exploratory Data Analysis",
+            "Statistical Analysis"
+        ],
         "url": "https://drive.google.com/file/d/1iVIsy1KWqqbqDkRfYnPj-PlQbQEFSOmm/view?usp=sharing"
     },
     {
-        "title": "LLM Eval Systems Framework",
+        "title": "Music Genre Classification",
+        "year": 2024,
+        "date": "2024-11-01",
+        "lastUpdated": "Last Updated: November 2024",
+        "image": "images/midi_keyboard.jpg",
+        "description": "Built a machine learning pipeline to classify music genres using MIDI-derived features from the Lakh MIDI Dataset. Extracted musical characteristics and evaluated multiple classification algorithms, using cross-validation and hyperparameter tuning to improve predictive performance.",
+        "skills": [
+            "Python",
+            "Pandas",
+            "NumPy",
+            "Scikit-learn",
+            "Feature Engineering",
+            "Data Preprocessing",
+            "Support Vector Machines (SVM)",
+            "K-Nearest Neighbors (KNN)",
+            "Decision Trees",
+            "Cross-Validation",
+            "Hyperparameter Tuning",
+            "Matplotlib / Seaborn"
+        ],
+        "url": "https://github.com/Ashalo/MIDI_Song_Prediction"
+    },
+    {
+        "title": "Parkinson's Disease Typing Data Visualization",
         "year": 2025,
-        "lastUpdated": "Last Updated: March 2026",
-        "image": "images/judge.png",
-        "description": "A modular framework for evaluating large language model outputs using custom judge metrics, automated test suites, and comparative analysis across multiple model providers.",
-        "url": "https://github.com/Ashalo/llm-eval-systems-framework"
+        "date": "2025-03-01",
+        "lastUpdated": "Last Updated: March 2025",
+        "image": "images/keyboard.jpg",
+        "description": "Developed an interactive visualization exploring how Parkinson's medication influences typing behavior using keystroke dynamics. Created interactive keyboard animations and visual analytics to compare typing latency and accuracy between medicated and unmedicated states.",
+        "skills": [
+            "JavaScript",
+            "D3.js",
+            "HTML",
+            "CSS",
+            "Data Visualization",
+            "Interactive Visual Analytics",
+            "Data Processing",
+            "Exploratory Data Analysis",
+            "Statistical Analysis"
+        ],
+        "url": "https://github.com/Ashalo/Typer"
     }
 ]

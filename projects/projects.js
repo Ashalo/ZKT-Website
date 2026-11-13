@@ -4,7 +4,7 @@ async function loadProjects() {
     try {
         const projects = await fetchJSON('../lib/projects.json');
 
-        projects.sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated));
+        projects.sort((a, b) => new Date(b.date || b.lastUpdated) - new Date(a.date || a.lastUpdated));
 
         const projectsContainer = document.querySelector('.projects');
         if (!projectsContainer) {
